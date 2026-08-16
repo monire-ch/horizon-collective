@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL('/horizon-banner.png', Astro.site);
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Horizon Collective',
+  url: canonical.origin,
+  description,
+  founders: [
+    { '@type': 'Person', name: 'Robyn Agoston' },
+    { '@type': 'Person', name: 'Ruud Rikhof' },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#4b003f" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Horizon Collective" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:alt" content="Horizon Collective abstract artwork" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <slot />
+  </body>
+</html>

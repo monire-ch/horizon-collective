@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const questions = ['What survives?', 'What transforms?', 'What must be reinvented?'];
+const workstreams = [
+  'Leadership development',
+  'Talent management',
+  'Performance & reward',
+  'Workforce management',
+];
+const involvement = [
+  ['Read.', 'Follow the ideas, research and publications as the inquiry evolves.'],
+  ['Contribute.', 'Bring your experience and perspective to a particular workstream.'],
+  ['Shape.', 'Take an active role in testing ideas and moving the work forward.'],
+];
+---
+
+<BaseLayout
+  title="Horizon Collective — Shaping the future of work"
+  description="A 2–3 year movement exploring how work and organisations may evolve in the age of AI, led by thinkers and practitioners."
+>
+  <header class="site-header" data-header>
+    <a class="wordmark" href="#top" aria-label="Horizon Collective home">
+      <span>HoRi</span><span>zon</span><small>collective</small>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu>
+      <span class="sr-only">Toggle navigation</span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+    <nav id="site-nav" aria-label="Main navigation" data-nav>
+      <a href="#movement">The movement</a>
+      <a href="#publications">Publications</a>
+      <a href="#initiators">Team</a>
+      <a class="button button--small" href="mailto:ruud.rikhof@brooksmillerpartners.com?subject=Join%20Horizon%20Collective">Join the collective ↗</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <img src="/horizon-banner.png" width="1280" height="320" alt="" fetchpriority="high" />
+      <div class="hero-copy">
+        <h1 class="sr-only" id="hero-title">Horizon Collective — a movement for the future of work</h1>
+      </div>
+    </section>
+
+    <section class="section intro" id="movement" aria-labelledby="movement-title">
+      <div>
+        <p class="eyebrow">The movement</p>
+        <h2 id="movement-title">The world of work<br />is being rewritten.</h2>
+      </div>
+      <div class="body-copy">
+        <p class="lead">The Horizon Collective is a 2–3 year movement where we are constantly evolving our thinking and understanding of the world of work and organisations in 7–10 years out.</p>
+        <p>Through a combination of crowdsourcing from thinkers and testing these with practitioners, we develop a point of view and provide guidance about the transformation changes in the world of work, as a result of AI.</p>
+      </div>
+    </section>
+
+    <section class="section questions" aria-labelledby="questions-title">
+      <div>
+        <p class="eyebrow eyebrow--lime">The questions</p>
+        <h2 id="questions-title">The questions are<br />bigger than the <em>answers.</em></h2>
+      </div>
+      <div class="body-copy">
+        <p>At this point in time, we are not sure exactly how the classic HR fields are going to play out. We also don’t have a view yet how L&D, Reward and some other areas are going to shape up.</p>
+        <p>We also do not know yet if the employee lifecycle as a concept will survive. Maybe we need to completely reimagine and evolve all these HR areas—and understand why the speed and depth of implementation differs across companies and industries.</p>
+      </div>
+      <ul class="question-list" aria-label="Questions we are exploring">
+        {questions.map((question) => <li>{question}</li>)}
+      </ul>
+    </section>
+
+    <div class="art-band" aria-hidden="true"></div>
+
+    <section class="section manifesto" aria-labelledby="manifesto-title">
+      <div>
+        <p class="eyebrow">Who is it for</p>
+        <h2 id="manifesto-title">“A duty of care<br />for the future.”</h2>
+      </div>
+      <div class="body-copy">
+        <p>The target group for the Horizon Collective are senior HR leaders and executives in roles where they are expected to have a point of view and who feel a <strong>duty of care for the future.</strong></p>
+        <p>And who also feel the urgency and have the agency to drive this forward.</p>
+      </div>
+    </section>
+
+    <div class="art-band" aria-hidden="true"></div>
+
+    <section class="section work" aria-labelledby="work-title">
+      <div>
+        <p class="eyebrow">How we work</p>
+        <h2 id="work-title">Distinct<br />workstreams.<br />One collective<br />horizon.</h2>
+      </div>
+      <div class="body-copy">
+        <p>We will establish several workstreams: leadership development, talent management, performance and reward, workforce management, and more.</p>
+        <p>Each workstream will have a curator; someone who will guide and facilitate the development of a point of view about a specific area. We will also invite senior academics, consultants and thought leaders to act as our council of wisdom.</p>
+        <ol class="stream-list">
+          {workstreams.map((stream, index) => <li><span>{String(index + 1).padStart(2, '0')}</span>{stream}</li>)}
+        </ol>
+      </div>
+    </section>
+
+    <section class="section publication" id="publications" aria-labelledby="publication-title">
+      <figure>
+        <img src="/event-flyer.webp" width="900" height="1125" alt="Horizon Collective event artwork: sign up now, powered by brooksmiller and WorkEvolved" loading="lazy" />
+      </figure>
+      <div>
+        <p class="eyebrow eyebrow--lime">Publications</p>
+        <h2 id="publication-title">A foundation<br />made to<br />evolve.</h2>
+        <p>After an initial workshop in March 2026 with 25 senior HR executives, we published the first white paper. That publication captures the first thoughts and years to come, constantly evolving our thinking and understanding in a combination of crowdsourcing from thinkers and testing these with practitioners.</p>
+        <p>This white paper should then serve as the starting point for that “thinking” where others can build on our ideas about the Future of Work and think of a summit and publication in 2028 when we present the final product to a wider audience.</p>
+        <div class="button-row">
+          <a class="button" href="mailto:ruud.rikhof@brooksmillerpartners.com?subject=Horizon%20Collective%20think%20piece">Request the think piece ↗</a>
+          <a class="button button--light" href="mailto:ruud.rikhof@brooksmillerpartners.com?subject=Horizon%20Collective%20workshop%20summary">Request the workshop summary ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section involvement" aria-labelledby="involvement-title">
+      <div>
+        <p class="eyebrow">Choose your level of involvement</p>
+        <h2 id="involvement-title">Read.<br />Contribute.<br /><em>Shape.</em></h2>
+      </div>
+      <img class="squiggle" src="/squiggly.svg" width="28" height="377" alt="" loading="lazy" />
+      <div class="body-copy">
+        <p>You can decide yourself how involved you want to be. Being just a curious reader is fine, contributing to a particular workstream is fine, or anything in between. Most importantly: you should feel free and comfortable with the choices you make.</p>
+        <p>We will make sure to share with you what we are working on, who the curators will be and how you can contribute. You will also ensure it all gets tied up in the collective and that we keep posting regularly about developments inside the Horizon Collective.</p>
+      </div>
+      <div class="involvement-grid">
+        {involvement.map(([title, text], index) => (
+          <article>
+            <span>0{index + 1}</span><h3>{title}</h3><p>{text}</p>
+          </article>
+        ))}
+      </div>
+      <p class="aside">Curious reader or active contributor — <em>there is no wrong way to take part.</em></p>
+    </section>
+
+    <section class="section initiators" id="initiators" aria-labelledby="initiators-title">
+      <div class="initiators-intro">
+        <div>
+          <p class="eyebrow">The initiators</p>
+          <h2 id="initiators-title">Two perspectives.<br />One shared inquiry.</h2>
+        </div>
+        <p>The Horizon Collective is a joint initiative from Robyn Agoston at WorkEvolved and Ruud Rikhof at brooksmiller. They both have a deep interest in how the future of work and organisations are evolving and have been researching and publishing about it.</p>
+      </div>
+      <div class="people-grid">
+        <article>
+          <img src="/robyn.jpeg" width="800" height="800" alt="Portrait of Robyn Agoston" loading="lazy" />
+          <p class="role">AI & Future of Work Strategist · Advisor · Speaker · Coach</p>
+          <h3>Robyn Agoston</h3>
+          <p>Across 20+ years, Robyn has led digital and AI transformations in global organisations, blending strategic vision with practical implementation. Her work helps leaders navigate uncertainty, connect technology to human potential and move from possibility to practice.</p>
+          <a href="mailto:robyn@workevolved.io">Get in touch ↗</a>
+        </article>
+        <article>
+          <img src="/ruud.jpg" width="721" height="692" alt="Portrait of Ruud Rikhof" loading="lazy" />
+          <p class="role">Transforming HR leadership · Research · Executive search</p>
+          <h3>Ruud Rikhof</h3>
+          <p>An international HR leader and executive search advisor whose work spans global HR leadership, community-building and thought leadership. Ruud is committed to the new world of work and the evolving role of HR at the intersection of business, people and practice.</p>
+          <a href="mailto:ruud.rikhof@brooksmillerpartners.com">Get in touch ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="closing" aria-labelledby="closing-title">
+      <h2 id="closing-title">The future of<br />work will not<br />shape <em>itself.</em></h2>
+      <div>
+        <p>Join us and help shape the future through ideas, research, workshops and action.</p>
+        <a class="button" href="mailto:ruud.rikhof@brooksmillerpartners.com?subject=Horizon%20Collective">Join the conversation ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="art-band" aria-hidden="true"></div>
+    <div class="footer-inner">
+      <a class="wordmark" href="#top" aria-label="Back to top"><span>HoRi</span><span>zon</span><small>collective</small></a>
+      <p>Powered by brooksmiller + WorkEvolved</p>
+      <p>© 2026 Horizon Collective</p>
+    </div>
+  </footer>
+
+  <script>
+    const menu = document.querySelector<HTMLButtonElement>('[data-menu]');
+    const nav = document.querySelector<HTMLElement>('[data-nav]');
+    menu?.addEventListener('click', () => {
+      const open = menu.getAttribute('aria-expanded') === 'true';
+      menu.setAttribute('aria-expanded', String(!open));
+      nav?.toggleAttribute('data-open', !open);
+    });
+    nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      menu?.setAttribute('aria-expanded', 'false');
+      nav.removeAttribute('data-open');
+    }));
+  </script>
+</BaseLayout>
