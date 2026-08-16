@@ -34,11 +34,8 @@ strong { font-weight: 600; }
 .skip-link { position: fixed; z-index: 100; top: .75rem; left: .75rem; padding: .7rem 1rem; background: var(--lime); color: var(--plum); transform: translateY(-150%); }
 .skip-link:focus { transform: none; }
 
-.site-header { position: fixed; z-index: 20; isolation: isolate; overflow: hidden; inset: 0 0 auto; min-height: 5rem; padding: 1rem var(--content-gutter); display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-bottom: 1px solid rgb(75 0 63 / 20%); background-color: rgb(246 240 236 / 84%); box-shadow: 0 .45rem 1.5rem rgb(75 0 63 / 8%); color: var(--plum); backdrop-filter: blur(12px) saturate(.8); -webkit-backdrop-filter: blur(12px) saturate(.8); }
+.site-header { position: fixed; z-index: 20; isolation: isolate; overflow: hidden; inset: 0 0 auto; min-height: 5rem; padding: 1rem var(--content-gutter); display: flex; align-items: center; justify-content: flex-end; gap: 2rem; border-bottom: 1px solid rgb(75 0 63 / 20%); background-color: rgb(246 240 236 / 84%); box-shadow: 0 .45rem 1.5rem rgb(75 0 63 / 8%); color: var(--plum); backdrop-filter: blur(12px) saturate(.8); -webkit-backdrop-filter: blur(12px) saturate(.8); }
 .site-header::before { content: ''; position: absolute; inset: 0; z-index: -1; background: url('/abstract-art.jpg') center 45% / cover; opacity: .13; mix-blend-mode: multiply; pointer-events: none; }
-.site-header > .wordmark { position: relative; z-index: 2; }
-.wordmark { display: grid; grid-template-columns: auto auto; align-items: end; width: max-content; text-decoration: none; font-size: 1.45rem; font-weight: 600; line-height: .75; letter-spacing: -.08em; }
-.wordmark small { grid-column: 2; font-size: .52rem; font-weight: 400; letter-spacing: .05em; }
 .site-header nav { display: flex; align-items: center; gap: clamp(1.25rem, 3vw, 3rem); font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 .site-header nav > a:not(.button) { text-decoration: none; }
 .site-header nav > a:not(.button):hover { opacity: .65; }
