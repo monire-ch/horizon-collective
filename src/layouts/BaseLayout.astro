@@ -38,11 +38,16 @@ const schema = {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={socialImage} />
-    <meta property="og:image:alt" content="Horizon Collective abstract artwork" />
+    <meta property="og:image:secure_url" content={socialImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Horizon Collective — The world of work is being rewritten." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content="Horizon Collective — The world of work is being rewritten." />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
     <title>{title}</title>
   </head>
