@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Caslon+Display&display=swap');
 
 :root {
-  --cream: #f6f0ec;
-  --plum: #4b003f;
-  --purple: #9e3b7e;
-  --orange: #c53d0e;
-  --pink: #b82d6b;
-  --lime: #b9e800;
-  --ink: #571549;
+  --cream: #F7F4F2;
+  --plum: #47093D;
+  --purple: #9E3B7E;
+  --orange: #E96723;
+  --pink: #DF3B62;
+  --lime: #C7FF0F;
   --line: rgba(87, 21, 73, .32);
   --pad: clamp(1.5rem, 3vw, 3rem);
   --max: 1600px;
@@ -20,7 +19,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--cream); }
-body { margin: 0; background: var(--cream); color: var(--ink); font-family: 'DM Sans', Arial, sans-serif; font-size: 1rem; line-height: 1.55; }
+body { margin: 0; background: var(--cream); color: var(--plum); font-family: 'DM Sans', Arial, sans-serif; font-size: 1rem; line-height: 1.55; }
 main section[id] { scroll-margin-top: calc(6rem - clamp(5rem, 12vw, 10rem)); }
 #initiators { scroll-margin-top: 2rem; }
 img { display: block; max-width: 100%; }
