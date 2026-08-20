@@ -99,10 +99,11 @@ strong { font-weight: 600; }
 .involvement { display: grid; grid-template-columns: minmax(16rem, 1fr) minmax(18rem, 1fr); gap: 2rem var(--column-gap); }
 .involvement h2 em { color: var(--orange); font-size: 1.15em; }
 .involvement-copy { position: relative; align-self: start; padding-top: calc(var(--eyebrow-gap) + 1.05rem); padding-left: calc(1.75rem + clamp(2rem, 4vw, 4rem)); }
+.involvement-content { position: relative; }
 .involvement .body-copy { padding-top: 0; }
 .involvement .body-copy p:last-child { margin-bottom: 0; }
 .involvement-cta { margin-top: 2rem; }
-.squiggle { position: absolute; inset: calc(var(--eyebrow-gap) + 1.05rem) auto 0 calc(-2.5 * var(--column-gap)); width: 1.75rem; background: url('/squiggly.svg') center / 100% 100% no-repeat; }
+.squiggle { position: absolute; inset: 0 auto 0 calc(-1.75rem - clamp(2rem, 4vw, 4rem) - 2 * var(--column-gap)); width: 1.75rem; background: url('/squiggly.svg') center / 100% 100% no-repeat; }
 .aside { grid-column: 1 / -1; justify-self: center; margin: 2rem 0 0; font-size: clamp(1.05rem, 1.35vw, 1.25rem); }
 .aside em { color: var(--orange); font-family: 'Newsreader', serif; font-size: 1.2em; }
 
