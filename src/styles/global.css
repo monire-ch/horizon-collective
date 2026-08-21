@@ -107,7 +107,7 @@ strong { font-weight: 600; }
 .work h2 { max-width: 12ch; }
 .stream-list { margin: 3rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
 .stream-list li { display: grid; grid-template-columns: 2rem 1fr; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid var(--line); font-size: .82rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
-.stream-list span { color: var(--purple); }
+.stream-list span { color: var(--pink); }
 
 .publication { display: grid; grid-template-columns: minmax(18rem, .9fr) minmax(24rem, 1.1fr); align-items: stretch; gap: clamp(5rem, 6vw, 7rem); background: var(--orange); color: var(--cream); }
 .publication figure { position: relative; align-self: stretch; width: 100%; margin: 0; overflow: hidden; transform: translateY(-1rem) rotate(-5deg) scaleX(.92) scaleY(1.04); transform-origin: center top; box-shadow: 0 2rem 5rem color-mix(in srgb, var(--plum) 17%, transparent); }
