@@ -20,6 +20,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--cream); }
 body { margin: 0; background: var(--cream); color: var(--plum); font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.55; }
+main { padding-top: 5rem; }
 main section[id] { scroll-margin-top: calc(6rem - clamp(5rem, 12vw, 10rem)); }
 #initiators { scroll-margin-top: 2rem; }
 img { display: block; max-width: 100%; }
@@ -58,8 +59,8 @@ strong { font-weight: 600; }
 .hero { position: relative; height: clamp(15rem, 26vw, 24rem); overflow: hidden; background: var(--plum); color: var(--cream); }
 .hero-art { position: absolute; inset: 0; background: url('/hero-art.webp') center / cover no-repeat; }
 .hero-lockup { position: absolute; z-index: 1; inset: 0; overflow: hidden; color: var(--cream); }
-.hero-horiz { position: absolute; top: clamp(1rem, 2vw, 2rem); right: clamp(1.5rem, 4vw, 4rem); width: clamp(18rem, 55vw, 50rem); height: auto; }
-.hero-bottom { position: absolute; bottom: clamp(.75rem, 1.5vw, 1.5rem); left: clamp(1.5rem, 4vw, 4rem); display: flex; align-items: center; gap: clamp(.6rem, 1.5vw, 1.5rem); }
+.hero-horiz { position: absolute; top: clamp(1rem, 2vw, 2rem); right: max(-2rem, -2vw); width: clamp(18rem, 55vw, 50rem); height: auto; }
+.hero-bottom { position: absolute; bottom: clamp(.75rem, 1.5vw, 1.5rem); left: max(-2rem, -2vw); display: flex; align-items: center; gap: clamp(.6rem, 1.5vw, 1.5rem); }
 .hero-zon { width: clamp(10rem, 31vw, 27rem); height: auto; }
 .hero-collective { width: clamp(7rem, 21vw, 18rem); height: auto; transform: translateY(32%); }
 .hero-copy { position: relative; z-index: 2; height: 100%; }
@@ -140,6 +141,7 @@ footer > .art-band { height: clamp(7rem, 10vw, 9rem); }
 
 @media (max-width: 800px) {
   :root { --section-gutter: var(--pad); }
+  main { padding-top: 4.5rem; }
   main section[id], #initiators { scroll-margin-top: 0; }
   h2 { font-size: clamp(2.6rem, 12vw, 4.6rem); }
   .site-header { min-height: 4.5rem; }
@@ -149,6 +151,8 @@ footer > .art-band { height: clamp(7rem, 10vw, 9rem); }
   .site-header[data-menu-open] { background-color: var(--cream); color: var(--plum); }
   .site-header[data-menu-open] .button { color: var(--cream); }
   .hero { height: clamp(15rem, 48vw, 24rem); }
+  .hero-horiz { top: clamp(2.5rem, 10vw, 4.5rem); }
+  .hero-bottom { bottom: clamp(2.5rem, 10vw, 4.5rem); }
   .intro, .questions, .manifesto, .work, .publication, .initiators-intro, .closing { grid-template-columns: 1fr; }
   .section { padding-block: 5.5rem; }
   .body-copy, .questions .body-copy, .manifesto .body-copy, .involvement .body-copy { padding-top: 0; }
