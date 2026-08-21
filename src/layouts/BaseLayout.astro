@@ -9,15 +9,46 @@ interface Props {
 const { title, description } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const socialImage = new URL('/horizon-banner.png', Astro.site);
+const organizationUrl = new URL('/', Astro.site);
+const organizationLogo = new URL('/horizon.png', Astro.site);
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Horizon Collective',
-  url: canonical.origin,
+  url: organizationUrl.href,
   description,
-  founders: [
-    { '@type': 'Person', name: 'Robyn Agoston' },
-    { '@type': 'Person', name: 'Ruud Rikhof' },
+  logo: {
+    '@type': 'ImageObject',
+    url: organizationLogo.href,
+    contentUrl: organizationLogo.href,
+    width: 640,
+    height: 160,
+    caption: 'Horizon Collective',
+  },
+  image: socialImage.href,
+  email: 'ruud.rikhof@brooksmillerpartners.com',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'ruud.rikhof@brooksmillerpartners.com',
+    contactType: 'general inquiries',
+    availableLanguage: ['English'],
+  },
+  founder: [
+    {
+      '@type': 'Person',
+      name: 'Robyn Agoston',
+      url: 'https://www.workevolved.io/',
+      sameAs: [
+        'https://www.linkedin.com/in/robyn-agoston/',
+        'https://workevolved.substack.com/',
+      ],
+    },
+    {
+      '@type': 'Person',
+      name: 'Ruud Rikhof',
+      url: 'https://brooksmillerpartners.com/',
+      sameAs: ['https://www.linkedin.com/in/ruudrikhof/'],
+    },
   ],
 };
 ---
