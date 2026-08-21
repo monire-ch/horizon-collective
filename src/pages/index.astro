@@ -195,17 +195,24 @@ A consistent thread in his work is research and thought leadership and he has (c
     const menu = document.querySelector<HTMLButtonElement>('[data-menu]');
     const nav = document.querySelector<HTMLElement>('[data-nav]');
 
+    const setMenuOpen = (open: boolean) => {
+      menu?.setAttribute('aria-expanded', String(open));
+      nav?.toggleAttribute('data-open', open);
+      header?.toggleAttribute('data-menu-open', open);
+      document.documentElement.toggleAttribute('data-menu-open', open);
+      document.body.toggleAttribute('data-menu-open', open);
+    };
+
     menu?.addEventListener('click', () => {
-      const open = menu.getAttribute('aria-expanded') === 'true';
-      menu.setAttribute('aria-expanded', String(!open));
-      nav?.toggleAttribute('data-open', !open);
-      header?.toggleAttribute('data-menu-open', !open);
+      setMenuOpen(menu.getAttribute('aria-expanded') !== 'true');
     });
-    nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-      menu?.setAttribute('aria-expanded', 'false');
-      nav.removeAttribute('data-open');
-      header?.removeAttribute('data-menu-open');
-    }));
+    nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setMenuOpen(false);
+    });
+    window.matchMedia('(min-width: 801px)').addEventListener('change', (event) => {
+      if (event.matches) setMenuOpen(false);
+    });
 
     const revealItems = Array.from(
       document.querySelectorAll<HTMLElement>('main section:not(.hero) > *')

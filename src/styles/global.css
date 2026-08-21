@@ -15,14 +15,15 @@
   --section-gutter: max(var(--section-pad), calc((100vw - var(--max)) / 2 + var(--section-pad)));
   --eyebrow-gap: clamp(2rem, 5vw, 4rem);
   --column-gap: clamp(2.5rem, 4vw, 4.5rem);
+  --header-height: 5rem;
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--cream); }
 body { margin: 0; background: var(--cream); color: var(--plum); font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.55; }
-main { padding-top: 5rem; }
-main section[id] { scroll-margin-top: calc(6rem - clamp(5rem, 12vw, 10rem)); }
-#initiators { scroll-margin-top: 2rem; }
+html[data-menu-open], body[data-menu-open] { overflow: hidden; overscroll-behavior: none; }
+main { padding-top: var(--header-height); }
+main section[id] { scroll-margin-top: var(--header-height); }
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration-thickness: .08em; text-underline-offset: .2em; }
 main a:not(.button) { background-image: linear-gradient(currentColor, currentColor), linear-gradient(var(--orange), var(--orange)); background-position: left calc(100% - .02em); background-repeat: no-repeat; background-size: 100% .08em, 0 .14em; text-decoration: none; transition: color .3s ease, background-size .4s cubic-bezier(.22, 1, .36, 1); }
@@ -44,8 +45,12 @@ strong { font-weight: 600; }
 .site-header nav { display: flex; align-items: center; gap: clamp(1.25rem, 3vw, 3rem); font-size: .875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 .site-header nav > a:not(.button) { text-decoration: none; }
 .site-header nav > a:not(.button):hover { opacity: .65; }
-.menu-toggle { display: none; width: 3rem; height: 3rem; border: 0; background: transparent; }
-.menu-toggle span:not(.sr-only) { display: block; height: 2px; width: 1.5rem; margin: .35rem auto; background: currentColor; transition: background-color .75s cubic-bezier(.22, 1, .36, 1), transform .25s ease; }
+.menu-toggle { display: none; width: 3rem; height: 3rem; border: 0; background: transparent; color: var(--plum); }
+.menu-toggle span:not(.sr-only) { position: absolute; top: 50%; left: 50%; display: block; height: 2px; width: 1.5rem; margin: 0; background: currentColor; transform-origin: center; transition: transform .4s cubic-bezier(.22, 1, .36, 1); }
+.menu-toggle span:nth-child(2) { transform: translate(-50%, calc(-50% - .3rem)); }
+.menu-toggle span:nth-child(3) { transform: translate(-50%, calc(-50% + .3rem)); }
+.site-header[data-menu-open] .menu-toggle span:nth-child(2) { transform: translate(-50%, -50%) rotate(45deg); }
+.site-header[data-menu-open] .menu-toggle span:nth-child(3) { transform: translate(-50%, -50%) rotate(-45deg); }
 
 .site-header .button { border-color: var(--purple); background: var(--purple); color: var(--cream); }
 .site-header .button:hover { border-color: color-mix(in srgb, var(--purple) 88%, var(--plum)); background: color-mix(in srgb, var(--purple) 88%, var(--plum)); color: var(--cream); }
@@ -140,15 +145,13 @@ footer > .art-band { height: clamp(7rem, 10vw, 9rem); }
 .footer-inner a:hover { color: var(--lime); text-decoration-color: transparent; }
 
 @media (max-width: 800px) {
-  :root { --section-gutter: var(--pad); }
-  main { padding-top: 4.5rem; }
-  main section[id], #initiators { scroll-margin-top: 0; }
+  :root { --section-gutter: var(--pad); --header-height: 4.5rem; }
   h2 { font-size: clamp(2.6rem, 12vw, 4.6rem); }
   .site-header { min-height: 4.5rem; }
-  .menu-toggle { display: block; position: relative; z-index: 2; }
+  .menu-toggle { display: block; position: absolute; z-index: 2; top: 1rem; right: var(--content-gutter); }
   .site-header nav { position: absolute; inset: 0 0 auto; min-height: 100vh; padding: 7rem var(--pad) 3rem; display: none; flex-direction: column; align-items: flex-start; background: var(--cream); color: var(--plum); font-size: 1rem; }
   .site-header nav[data-open] { display: flex; }
-  .site-header[data-menu-open] { background-color: var(--cream); color: var(--plum); }
+  .site-header[data-menu-open] { height: 100vh; height: 100dvh; background-color: var(--cream); color: var(--plum); }
   .site-header[data-menu-open] .button { color: var(--cream); }
   .hero { height: clamp(15rem, 48vw, 24rem); }
   .hero-horiz { top: clamp(2.5rem, 10vw, 4.5rem); }
