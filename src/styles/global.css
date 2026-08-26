@@ -25,8 +25,9 @@
   --pad: clamp(1.5rem, 3vw, 3rem);
   --max: 1600px;
   --content-gutter: max(var(--pad), calc((100vw - var(--max)) / 2 + var(--pad)));
+  --section-max: 1920px;
   --section-pad: clamp(2.5rem, 8vw, 9rem);
-  --section-gutter: max(var(--section-pad), calc((100vw - var(--max)) / 2 + var(--section-pad)));
+  --section-gutter: max(var(--section-pad), calc((100vw - var(--section-max)) / 2 + var(--section-pad)));
   --eyebrow-gap: clamp(2rem, 5vw, 4rem);
   --column-gap: clamp(2.5rem, 4vw, 4.5rem);
   --header-height: 5rem;
@@ -76,8 +77,7 @@ strong { font-weight: 600; }
 .button--light:hover { border-color: var(--orange); background: var(--orange); color: var(--cream); }
 
 .hero { position: relative; height: clamp(15rem, 26vw, 24rem); overflow: hidden; background: var(--plum); color: var(--cream); }
-.hero-art { position: absolute; inset: 0; display: block; }
-.hero-art img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.hero-art { position: absolute; inset: 0; background: url('/hero-art-clean.webp') left center / 100rem 100% repeat-x; }
 .hero-lockup { position: absolute; z-index: 1; inset: 0; overflow: hidden; color: var(--cream); }
 .hero-horiz { position: absolute; top: clamp(1rem, 2vw, 2rem); right: max(-2rem, -2vw); width: clamp(18rem, 55vw, 50rem); height: auto; }
 .hero-bottom { position: absolute; bottom: clamp(.75rem, 1.5vw, 1.5rem); left: max(-2rem, -2vw); display: flex; align-items: center; gap: clamp(.6rem, 1.5vw, 1.5rem); }
@@ -101,7 +101,7 @@ strong { font-weight: 600; }
 .question-list li { font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 .question-list li::before { content: '■'; display: inline-block; margin-right: 1rem; color: var(--lime); font-size: .5rem; }
 
-.art-band { height: clamp(4rem, 8vw, 7rem); background: url('/art-band.webp') center / 55rem auto repeat-x; }
+.art-band { height: clamp(4rem, 8vw, 7rem); background: url('/art-band.webp') center bottom / 55rem auto repeat-x; }
 .manifesto h2 { font-family: 'Newsreader', serif; font-size: clamp(2.75rem, 4.5vw, 4.5rem); font-style: italic; letter-spacing: -.04em; }
 
 .work h2 { max-width: 12ch; }
@@ -155,7 +155,7 @@ strong { font-weight: 600; }
 .closing .button { margin-top: 2rem; }
 .closing .button:hover { box-shadow: 0 5px 0 var(--lime); }
 footer { position: relative; background: var(--plum); color: var(--cream); }
-footer > .art-band { height: clamp(7rem, 10vw, 9rem); }
+footer > .art-band { height: clamp(7rem, 10vw, 9rem); background-size: 70rem auto; }
 .footer-inner { position: absolute; left: 50%; bottom: clamp(1.5rem, 3vw, 2.5rem); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.5rem; width: max-content; max-width: calc(100% - 2rem); padding: .75rem 1.25rem; background: color-mix(in srgb, var(--purple) 50%, transparent); transform: translateX(-50%); backdrop-filter: blur(4px); }
 .footer-inner p { margin: 0; font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; }
 .footer-inner a { color: inherit; text-decoration-color: currentColor; text-underline-offset: .18em; transition: color .3s ease, text-decoration-color .3s ease; }
@@ -214,7 +214,6 @@ footer > .art-band { height: clamp(7rem, 10vw, 9rem); }
   :root { --pad: 1.25rem; }
   h2 { font-size: clamp(2.35rem, 10.5vw, 3rem); }
   .hero { height: 16rem; }
-  .hero-art img { object-position: center; }
   .section { padding-block: 4rem; }
   .publication { overflow: hidden; }
   .publication figure { width: 85%; }
