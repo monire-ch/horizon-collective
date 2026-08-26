@@ -110,8 +110,9 @@ strong { font-weight: 600; }
 .stream-list span { color: var(--pink); }
 
 .publication { display: grid; grid-template-columns: minmax(18rem, .9fr) minmax(24rem, 1.1fr); align-items: stretch; gap: clamp(5rem, 6vw, 7rem); background: var(--orange); color: var(--cream); }
-.publication figure { position: relative; align-self: stretch; width: 100%; margin: 0; overflow: hidden; transform: translateY(-1rem) rotate(-5deg) scaleX(.92) scaleY(1.04); transform-origin: center top; box-shadow: 0 2rem 5rem color-mix(in srgb, var(--plum) 17%, transparent); }
-.publication figure img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center; }
+.publication figure { position: relative; align-self: center; width: 92%; aspect-ratio: 707 / 1000; margin: 0 auto; overflow: hidden; transform: translateY(-1rem) rotate(-5deg); transform-origin: center top; box-shadow: 0 2rem 5rem color-mix(in srgb, var(--plum) 17%, transparent); }
+.publication-cover-link { display: block; width: 100%; height: 100%; }
+.publication figure img { width: 100%; height: 100%; max-width: none; object-fit: contain; }
 .publication h2 { margin-bottom: 2.5rem; }
 .publication .eyebrow { margin-bottom: 1.5rem; }
 .publication .button:hover { border-color: var(--lime); background: var(--lime); color: var(--plum); box-shadow: 0 5px 0 var(--plum); }
@@ -165,6 +166,10 @@ footer > .art-band { height: clamp(7rem, 10vw, 9rem); background-size: 70rem aut
   .initiators-intro { margin-bottom: 2rem; }
 }
 
+@media (min-width: 1201px) {
+  .publication figure { width: 86%; }
+}
+
 @media (max-width: 800px) {
   :root { --section-gutter: var(--pad); --header-height: 4.5rem; --column-gap: 2rem; --eyebrow-gap: clamp(1.5rem, 5vw, 2.5rem); }
   h2 { font-size: clamp(2.5rem, 8vw, 3.5rem); }
@@ -186,7 +191,7 @@ footer > .art-band { height: clamp(7rem, 10vw, 9rem); background-size: 70rem aut
   .answers-break { display: none; }
   .manifesto h2 br, .publication h2 br { display: none; }
   .publication { gap: 4rem; }
-  .publication figure { align-self: center; width: min(85%, 24rem); aspect-ratio: 4 / 5; margin-inline: auto; }
+  .publication figure { width: min(85%, 24rem); aspect-ratio: 707 / 1000; }
   .publication > div { max-width: 42rem; }
   .involvement { grid-template-columns: 1fr; }
   .involvement-copy { padding-top: 0; padding-left: 0; }
@@ -207,7 +212,7 @@ footer > .art-band { height: clamp(7rem, 10vw, 9rem); background-size: 70rem aut
 }
 
 @media (min-width: 801px) and (max-width: 1040px) {
-  .publication figure { align-self: center; aspect-ratio: 4 / 5; }
+  .publication figure { aspect-ratio: 707 / 1000; }
 }
 
 @media (max-width: 480px) {
@@ -257,11 +262,11 @@ footer > .art-band { height: clamp(7rem, 10vw, 9rem); background-size: 70rem aut
   }
 
   .publication figure[data-reveal] {
-    transform: translateY(.35rem) rotate(-5deg) scaleX(.92) scaleY(1.04);
+    transform: translateY(.35rem) rotate(-5deg);
   }
 
   .publication figure[data-reveal].is-visible {
-    transform: translateY(-1rem) rotate(-5deg) scaleX(.92) scaleY(1.04);
+    transform: translateY(-1rem) rotate(-5deg);
   }
 
   .footer-inner[data-reveal] {
