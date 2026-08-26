@@ -110,7 +110,7 @@ strong { font-weight: 600; }
 .stream-list span { color: var(--pink); }
 
 .publication { display: grid; grid-template-columns: minmax(18rem, .9fr) minmax(24rem, 1.1fr); align-items: stretch; gap: clamp(5rem, 6vw, 7rem); background: var(--orange); color: var(--cream); }
-.publication figure { position: relative; align-self: center; width: 92%; aspect-ratio: 707 / 1000; margin: 0 auto; overflow: hidden; transform: translateY(-1rem) rotate(-5deg); transform-origin: center top; box-shadow: 0 2rem 5rem color-mix(in srgb, var(--plum) 17%, transparent); }
+.publication figure { position: relative; align-self: center; width: 92%; aspect-ratio: 707 / 1000; margin: 0 auto; overflow: hidden; transform: translateY(-1rem) rotate(-5deg); transform-origin: center top; box-shadow: 1.35rem 1.35rem 0 #B93B28, 0 2.5rem 5rem color-mix(in srgb, var(--plum) 24%, transparent); }
 .publication-cover-link { display: block; width: 100%; height: 100%; }
 .publication figure img { width: 100%; height: 100%; max-width: none; object-fit: contain; }
 .publication h2 { margin-bottom: 2.5rem; }
@@ -246,6 +246,17 @@ footer > .art-band { height: clamp(7rem, 10vw, 9rem); background-size: 70rem aut
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  @keyframes publication-float {
+    from {
+      transform: translateY(-1rem) rotate(-5deg);
+      box-shadow: 1.35rem 1.35rem 0 #B93B28, 0 2.5rem 5rem color-mix(in srgb, var(--plum) 24%, transparent);
+    }
+    to {
+      transform: translateY(-1.65rem) rotate(-4.35deg);
+      box-shadow: 1.7rem 1.85rem 0 #B93B28, 0 3.25rem 5.75rem color-mix(in srgb, var(--plum) 30%, transparent);
+    }
+  }
+
   [data-reveal] {
     opacity: 0;
     transform: translateY(1.35rem);
@@ -267,6 +278,7 @@ footer > .art-band { height: clamp(7rem, 10vw, 9rem); background-size: 70rem aut
 
   .publication figure[data-reveal].is-visible {
     transform: translateY(-1rem) rotate(-5deg);
+    animation: publication-float 2.8s ease-in-out .4s infinite alternate;
   }
 
   .footer-inner[data-reveal] {
