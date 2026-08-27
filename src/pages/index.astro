@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ArrowIcon from '../components/ArrowIcon.astro';
+import { links } from '../content/links';
+import { featuredPublication, previousPublications, publicationDownloads } from '../content/publications';
 
 const questions = ['What survives?', 'What transforms?', 'What must be reinvented?'];
 const workstreams = [
@@ -14,15 +17,18 @@ const workstreams = [
   title="Horizon Collective | Shaping the future of work"
   description="A 2–3 year movement exploring how work and organisations may evolve in the age of AI, led by thinkers and practitioners."
 >
-  <header class="site-header" data-header>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu>
-      <span class="sr-only">Toggle navigation</span><span aria-hidden="true"></span><span aria-hidden="true"></span>
-    </button>
-    <nav id="site-nav" aria-label="Main navigation" data-nav>
-      <a href="#movement">The movement</a>
-      <a href="#publications">Publications</a>
-      <a href="#initiators">Team</a>
-      <a class="button button--small" href="mailto:ruud.rikhof@brooksmillerpartners.com?subject=Join%20Horizon%20Collective">Join the collective&nbsp;↗</a>
+  <header class="site-header">
+    <nav id="site-nav" aria-label="Main navigation">
+      <a href={links.sections.movement}>
+        <span class="nav-label nav-label--full">The movement</span>
+        <span class="nav-label nav-label--short">Movement</span>
+      </a>
+      <a href={links.sections.publications}>Publications</a>
+      <a href={links.sections.team}>Team</a>
+      <a class="button button--small" href={links.contact.joinCollective}>
+        <span class="nav-label nav-label--full">Join the collective <ArrowIcon /></span>
+        <span class="nav-label nav-label--short">Join <ArrowIcon /></span>
+      </a>
     </nav>
   </header>
 
@@ -96,8 +102,8 @@ const workstreams = [
 
     <section class="section publication" id="publications" aria-labelledby="publication-title" data-nav-theme="dark">
       <figure>
-        <a class="publication-cover-link" href="/downloads/Horizon%20Collective%20White%20Paper.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the Horizon Collective white paper in a new tab">
-          <img src="/white-paper-cover.png" width="1414" height="2000" alt="Cover of the Horizon Collective white paper: Exploring the Future of Work in the Age of AI" loading="lazy" />
+        <a class="publication-cover-link" href={featuredPublication.url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${featuredPublication.title} in a new tab`}>
+          <img src={featuredPublication.cover.src} width={featuredPublication.cover.width} height={featuredPublication.cover.height} alt={featuredPublication.cover.alt} loading="lazy" />
         </a>
       </figure>
       <div>
@@ -106,8 +112,18 @@ const workstreams = [
         <p>After an initial workshop in March 2026 with 25 senior HR executives, we published the first white paper. That publication captures the first thoughts and years to come, constantly evolving our thinking and understanding in a combination of crowdsourcing from <strong>thinkers</strong> and testing these with <strong>practitioners</strong>.</p>
         <p>This white paper should then serve as the starting point for that <strong>“thinking”</strong> where others can build on our ideas about <strong>“the future of”</strong> work and think of a summit and publication in 2028 when we present the final product to a wider audience.</p>
         <div class="button-row">
-          <a class="button" href="/downloads/Horizon%20Collective%20White%20Paper.pdf" download="Horizon-Collective-White-Paper.pdf">Download the white paper&nbsp;↓</a>
-          <a class="button button--light" href="/downloads/Summary%20Workshop%20HoRizon%20Collective.pdf" download="Horizon-Collective-Workshop-Summary.pdf">Download the workshop summary&nbsp;↓</a>
+          {publicationDownloads.map((publication) => (
+            <a
+              class:list={['button', publication.style === 'light' && 'button--light']}
+              href={publication.url}
+              download={publication.downloadName}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="button-label">{publication.buttonLabel}</span>
+              <ArrowIcon direction="down" />
+            </a>
+          ))}
         </div>
       </div>
     </section>
@@ -124,7 +140,7 @@ const workstreams = [
             <p>You can decide yourself how involved you want to be. Being <strong>just a</strong> curious reader is fine, contributing to a particular workstream is fine, or anything in between. Most importantly: you should feel free and comfortable with the choices you make.</p>
             <p>We will make sure to share with you what we are working on, who the curators will be and how you can contribute. You will also ensure it all gets tied up in the collective and that we keep posting regularly about developments inside the Horizon Collective.</p>
           </div>
-          <a class="button involvement-cta" href="mailto:ruud.rikhof@brooksmillerpartners.com?subject=Join%20Horizon%20Collective">Join the collective&nbsp;↗</a>
+          <a class="button involvement-cta" href={links.contact.joinCollective}><span class="button-label">Join the collective</span><ArrowIcon /></a>
         </div>
       </div>
       <p class="aside">Curious reader or active contributor — <em>there is no wrong way to take part.</em></p>
@@ -136,38 +152,38 @@ const workstreams = [
           <p class="eyebrow">The initiators</p>
           <h2 id="initiators-title">Two perspectives.<br />One shared inquiry.</h2>
         </div>
-        <p>The Horizon Collective is a joint initiative from Robyn Agoston at <a href="https://www.workevolved.io/" target="_blank" rel="noopener noreferrer"><strong>WorkEvolved</strong></a> and Ruud Rikhof at <a href="https://brooksmillerpartners.com/" target="_blank" rel="noopener noreferrer"><strong>brooksmiller</strong></a>. They both have a deep interest in how the future of work and organisations are evolving and have been researching and publishing about it.</p>
+        <p>The Horizon Collective is a joint initiative from Robyn Agoston at <a href={links.organizations.workEvolved} target="_blank" rel="noopener noreferrer"><strong>WorkEvolved</strong></a> and Ruud Rikhof at <a href={links.organizations.brooksmiller} target="_blank" rel="noopener noreferrer"><strong>brooksmiller</strong></a>. They both have a deep interest in how the future of work and organisations are evolving and have been researching and publishing about it.</p>
       </div>
       <div class="people-grid">
         <article>
           <img src="/robyn.jpeg" width="800" height="800" alt="Portrait of Robyn Agoston" loading="lazy" decoding="async" />
           <h3>Robyn Agoston</h3>
           <p class="role">AI & Future of Work Strategist · Advisor · Speaker · Coach</p>
-          <p><a href="https://www.linkedin.com/in/robyn-agoston/" target="_blank" rel="noopener noreferrer">Robyn Agoston</a> is an AI & Future of Work Strategist, Advisor, Speaker and Coach, working at the intersection of people and technology. She helps individuals and organisations design work for the AI era so they can make the most of both humans and AI. Over the past 20+ years, she has led digital and AI transformations across global companies like KPMG, GSK, Novartis, Beamery, Tesco, O2, Shell, BP and AstraZeneca and now with PMI. As a consultant, entrepreneur and internal adviser, she is a generalist problem-solver who thrives at blending strategic vision with practical implementation. She has a uniquely global perspective from living in seven countries, and working across Europe, Africa, Asia and North America. Change might look different in every culture, but the human elements stay surprisingly consistent</p>
+          <p><a href={links.people.robynLinkedIn} target="_blank" rel="noopener noreferrer">Robyn Agoston</a> is an AI & Future of Work Strategist, Advisor, Speaker and Coach, working at the intersection of people and technology. She helps individuals and organisations design work for the AI era so they can make the most of both humans and AI. Over the past 20+ years, she has led digital and AI transformations across global companies like KPMG, GSK, Novartis, Beamery, Tesco, O2, Shell, BP and AstraZeneca and now with PMI. As a consultant, entrepreneur and internal adviser, she is a generalist problem-solver who thrives at blending strategic vision with practical implementation. She has a uniquely global perspective from living in seven countries, and working across Europe, Africa, Asia and North America. Change might look different in every culture, but the human elements stay surprisingly consistent</p>
           <div class="person-links" aria-label="Robyn Agoston links">
-            <a href="https://www.workevolved.io/" target="_blank" rel="noopener noreferrer">WorkEvolved ↗</a>
-            <a href="https://workevolved.substack.com/" target="_blank" rel="noopener noreferrer">Substack ↗</a>
-            <a href="mailto:robyn@workevolved.io">robyn@workevolved.io</a>
+            <a href={links.organizations.workEvolved} target="_blank" rel="noopener noreferrer">WorkEvolved <ArrowIcon /></a>
+            <a href={links.people.robynSubstack} target="_blank" rel="noopener noreferrer">Substack <ArrowIcon /></a>
+            <a href={`mailto:${links.contact.robynEmail}`}>{links.contact.robynEmail}</a>
           </div>
         </article>
         <article>
           <img src="/ruud.jpg" width="721" height="692" alt="Portrait of Ruud Rikhof" loading="lazy" decoding="async" />
           <h3>Ruud Rikhof</h3>
           <p class="role">Transforming HR leadership · Research · Executive search</p>
-          <p>The career of <a href="https://www.linkedin.com/in/ruudrikhof/" target="_blank" rel="noopener noreferrer">Ruud Rikhof</a> is a blend of international HR leadership experience, research-based insight, and executive search in the Human Resources domain.
+          <p>The career of <a href={links.people.ruudLinkedIn} target="_blank" rel="noopener noreferrer">Ruud Rikhof</a> is a blend of international HR leadership experience, research-based insight, and executive search in the Human Resources domain.
 The HR career was shaped, amongst others, at IBM, Bristol-Myers Squibb, Novartis, and UBS, working globally and based out of the Netherlands, Austria, the UK, Germany, and Switzerland. In local, regional, and global positions. He was the co-founder of KennedyFitch, a recognised brand for executive search, people advisory and leadership & transformation. In parallel, he has been active in building and connecting HR communities, including as co-founder of the Beyond HR Forum.
 A consistent thread in his work is research and thought leadership and he has (co-)authored several studies on the evolving role of HR and the new world of work, which continues to inform his perspective and practice. At Brooksmiller, he focuses on executive search in the HR domain. </p>
           <div class="person-links" aria-label="Ruud Rikhof links">
-            <a href="https://brooksmillerpartners.com/" target="_blank" rel="noopener noreferrer">brooksmiller ↗</a>
-            <a href="https://www.linkedin.com/in/ruudrikhof/" target="_blank" rel="noopener noreferrer" aria-label="Ruud Rikhof on LinkedIn">LinkedIn ↗</a>
-            <a href="mailto:ruud.rikhof@brooksmillerpartners.com">ruud.rikhof@brooksmillerpartners.com</a>
+            <a href={links.organizations.brooksmiller} target="_blank" rel="noopener noreferrer">brooksmiller <ArrowIcon /></a>
+            <a href={links.people.ruudLinkedIn} target="_blank" rel="noopener noreferrer" aria-label="Ruud Rikhof on LinkedIn">LinkedIn <ArrowIcon /></a>
+            <a href={`mailto:${links.contact.ruudEmail}`}>{links.contact.ruudEmail}</a>
           </div>
           <div class="previous-publications">
             <p>Previous publications</p>
             <ul>
-              <li><a href="https://www.linkedin.com/posts/ruudrikhof_the-dehumanized-workforce-ugcPost-7285680408615137280-uGwp/" target="_blank" rel="noopener noreferrer">The (de)Humanized Workforce <span aria-hidden="true">↗</span></a></li>
-              <li><a href="https://www.linkedin.com/pulse/tomorrows-re-humanized-hr-ruud-rikhof/" target="_blank" rel="noopener noreferrer">Tomorrow’s Re-Humanized HR <span aria-hidden="true">↗</span></a></li>
-              <li><a href="https://www.linkedin.com/pulse/10-unavoidable-trends-relevant-hr-ruud-rikhof/" target="_blank" rel="noopener noreferrer">10 Unavoidable Trends Relevant for HR <span aria-hidden="true">↗</span></a></li>
+              {previousPublications.map((publication) => (
+                <li><a href={publication.url} target="_blank" rel="noopener noreferrer"><span>{publication.title}</span><ArrowIcon /></a></li>
+              ))}
             </ul>
           </div>
         </article>
@@ -178,7 +194,7 @@ A consistent thread in his work is research and thought leadership and he has (c
       <h2 id="closing-title">The future of<br />work will not<br />shape <em>itself.</em></h2>
       <div>
         <p>Join us and help shape the future through ideas, research, workshops and action.</p>
-        <a class="button" href="mailto:ruud.rikhof@brooksmillerpartners.com?subject=Join%20Horizon%20Collective">Join the conversation&nbsp;↗</a>
+        <a class="button" href={links.contact.joinCollective}><span class="button-label">Join the conversation</span><ArrowIcon /></a>
       </div>
     </section>
   </main>
@@ -186,36 +202,13 @@ A consistent thread in his work is research and thought leadership and he has (c
   <footer data-nav-theme="dark">
     <div class="art-band" aria-hidden="true" data-nav-theme="dark"></div>
     <div class="footer-inner" data-nav-theme="dark">
-      <p>Powered by <a href="https://brooksmillerpartners.com/" target="_blank" rel="noopener noreferrer">brooksmiller</a> + <a href="https://www.workevolved.io/" target="_blank" rel="noopener noreferrer">WorkEvolved</a></p>
+      <p>Powered by <a href={links.organizations.brooksmiller} target="_blank" rel="noopener noreferrer">brooksmiller</a> + <a href={links.organizations.workEvolved} target="_blank" rel="noopener noreferrer">WorkEvolved</a></p>
       <p>© 2026 Horizon Collective</p>
-      <p>Website by <a href="https://monire.ch/" target="_blank" rel="noopener noreferrer">Moniré</a></p>
+      <p>Website by <a href={links.credits.monire} target="_blank" rel="noopener noreferrer">Moniré</a></p>
     </div>
   </footer>
 
   <script>
-    const header = document.querySelector<HTMLElement>('[data-header]');
-    const menu = document.querySelector<HTMLButtonElement>('[data-menu]');
-    const nav = document.querySelector<HTMLElement>('[data-nav]');
-
-    const setMenuOpen = (open: boolean) => {
-      menu?.setAttribute('aria-expanded', String(open));
-      nav?.toggleAttribute('data-open', open);
-      header?.toggleAttribute('data-menu-open', open);
-      document.documentElement.toggleAttribute('data-menu-open', open);
-      document.body.toggleAttribute('data-menu-open', open);
-    };
-
-    menu?.addEventListener('click', () => {
-      setMenuOpen(menu.getAttribute('aria-expanded') !== 'true');
-    });
-    nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') setMenuOpen(false);
-    });
-    window.matchMedia('(min-width: 801px)').addEventListener('change', (event) => {
-      if (event.matches) setMenuOpen(false);
-    });
-
     const revealItems = Array.from(
       document.querySelectorAll<HTMLElement>('main section:not(.hero) > *')
     );

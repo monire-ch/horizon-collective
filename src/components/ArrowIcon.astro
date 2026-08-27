@@ -1,0 +1,15 @@
+---
+interface Props {
+  direction?: 'up-right' | 'down';
+}
+
+const { direction = 'up-right' } = Astro.props;
+---
+
+<svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+  {direction === 'down' ? (
+    <path d="M8 2.5v10.25m-4-4L8 12.75l4-4" />
+  ) : (
+    <path d="M4 12 12 4M5 4h7v7" />
+  )}
+</svg>
