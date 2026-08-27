@@ -26,8 +26,8 @@ const workstreams = [
       <a href={links.sections.publications}>Publications</a>
       <a href={links.sections.team}>Team</a>
       <a class="button button--small" href={links.contact.joinCollective}>
-        <span class="nav-label nav-label--full">Join the collective&nbsp;<ArrowIcon /></span>
-        <span class="nav-label nav-label--short">Join&nbsp;<ArrowIcon /></span>
+        <span class="nav-label nav-label--full">Join the collective <ArrowIcon /></span>
+        <span class="nav-label nav-label--short">Join <ArrowIcon /></span>
       </a>
     </nav>
   </header>
@@ -120,7 +120,8 @@ const workstreams = [
               target="_blank"
               rel="noopener noreferrer"
             >
-              {publication.buttonLabel}&nbsp;<ArrowIcon direction="down" />
+              <span class="button-label">{publication.buttonLabel}</span>
+              <ArrowIcon direction="down" />
             </a>
           ))}
         </div>
@@ -139,7 +140,7 @@ const workstreams = [
             <p>You can decide yourself how involved you want to be. Being <strong>just a</strong> curious reader is fine, contributing to a particular workstream is fine, or anything in between. Most importantly: you should feel free and comfortable with the choices you make.</p>
             <p>We will make sure to share with you what we are working on, who the curators will be and how you can contribute. You will also ensure it all gets tied up in the collective and that we keep posting regularly about developments inside the Horizon Collective.</p>
           </div>
-          <a class="button involvement-cta" href={links.contact.joinCollective}>Join the collective&nbsp;<ArrowIcon /></a>
+          <a class="button involvement-cta" href={links.contact.joinCollective}><span class="button-label">Join the collective</span><ArrowIcon /></a>
         </div>
       </div>
       <p class="aside">Curious reader or active contributor — <em>there is no wrong way to take part.</em></p>
@@ -181,7 +182,7 @@ A consistent thread in his work is research and thought leadership and he has (c
             <p>Previous publications</p>
             <ul>
               {previousPublications.map((publication) => (
-                <li><a href={publication.url} target="_blank" rel="noopener noreferrer">{publication.title} <ArrowIcon /></a></li>
+                <li><a href={publication.url} target="_blank" rel="noopener noreferrer"><span>{publication.title}</span><ArrowIcon /></a></li>
               ))}
             </ul>
           </div>
@@ -193,7 +194,7 @@ A consistent thread in his work is research and thought leadership and he has (c
       <h2 id="closing-title">The future of<br />work will not<br />shape <em>itself.</em></h2>
       <div>
         <p>Join us and help shape the future through ideas, research, workshops and action.</p>
-        <a class="button" href={links.contact.joinCollective}>Join the conversation&nbsp;<ArrowIcon /></a>
+        <a class="button" href={links.contact.joinCollective}><span class="button-label">Join the conversation</span><ArrowIcon /></a>
       </div>
     </section>
   </main>
