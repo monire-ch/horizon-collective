@@ -223,7 +223,7 @@ footer > .art-band { height: clamp(7rem, 10vw, 9rem); background-size: 70rem aut
   h2 { font-size: clamp(2.35rem, 10.5vw, 3rem); }
   .hero { height: 16rem; }
   .section { padding-block: 4rem; }
-  .publication figure { width: 80%; }
+  .publication figure { left: -.625rem; width: 80%; }
   .involvement { grid-template-columns: 1fr; }
   .involvement-content { padding-left: 2.25rem; }
   .squiggle { width: 1rem; }
