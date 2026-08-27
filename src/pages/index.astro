@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ArrowIcon from '../components/ArrowIcon.astro';
 import { links } from '../content/links';
 import { featuredPublication, previousPublications, publicationDownloads } from '../content/publications';
 
@@ -25,8 +26,8 @@ const workstreams = [
       <a href={links.sections.publications}>Publications</a>
       <a href={links.sections.team}>Team</a>
       <a class="button button--small" href={links.contact.joinCollective}>
-        <span class="nav-label nav-label--full">Join the collective&nbsp;↗</span>
-        <span class="nav-label nav-label--short">Join&nbsp;↗</span>
+        <span class="nav-label nav-label--full">Join the collective&nbsp;<ArrowIcon /></span>
+        <span class="nav-label nav-label--short">Join&nbsp;<ArrowIcon /></span>
       </a>
     </nav>
   </header>
@@ -119,7 +120,7 @@ const workstreams = [
               target="_blank"
               rel="noopener noreferrer"
             >
-              {publication.buttonLabel}&nbsp;↓
+              {publication.buttonLabel}&nbsp;<ArrowIcon direction="down" />
             </a>
           ))}
         </div>
@@ -138,7 +139,7 @@ const workstreams = [
             <p>You can decide yourself how involved you want to be. Being <strong>just a</strong> curious reader is fine, contributing to a particular workstream is fine, or anything in between. Most importantly: you should feel free and comfortable with the choices you make.</p>
             <p>We will make sure to share with you what we are working on, who the curators will be and how you can contribute. You will also ensure it all gets tied up in the collective and that we keep posting regularly about developments inside the Horizon Collective.</p>
           </div>
-          <a class="button involvement-cta" href={links.contact.joinCollective}>Join the collective&nbsp;↗</a>
+          <a class="button involvement-cta" href={links.contact.joinCollective}>Join the collective&nbsp;<ArrowIcon /></a>
         </div>
       </div>
       <p class="aside">Curious reader or active contributor — <em>there is no wrong way to take part.</em></p>
@@ -159,8 +160,8 @@ const workstreams = [
           <p class="role">AI & Future of Work Strategist · Advisor · Speaker · Coach</p>
           <p><a href={links.people.robynLinkedIn} target="_blank" rel="noopener noreferrer">Robyn Agoston</a> is an AI & Future of Work Strategist, Advisor, Speaker and Coach, working at the intersection of people and technology. She helps individuals and organisations design work for the AI era so they can make the most of both humans and AI. Over the past 20+ years, she has led digital and AI transformations across global companies like KPMG, GSK, Novartis, Beamery, Tesco, O2, Shell, BP and AstraZeneca and now with PMI. As a consultant, entrepreneur and internal adviser, she is a generalist problem-solver who thrives at blending strategic vision with practical implementation. She has a uniquely global perspective from living in seven countries, and working across Europe, Africa, Asia and North America. Change might look different in every culture, but the human elements stay surprisingly consistent</p>
           <div class="person-links" aria-label="Robyn Agoston links">
-            <a href={links.organizations.workEvolved} target="_blank" rel="noopener noreferrer">WorkEvolved ↗</a>
-            <a href={links.people.robynSubstack} target="_blank" rel="noopener noreferrer">Substack ↗</a>
+            <a href={links.organizations.workEvolved} target="_blank" rel="noopener noreferrer">WorkEvolved <ArrowIcon /></a>
+            <a href={links.people.robynSubstack} target="_blank" rel="noopener noreferrer">Substack <ArrowIcon /></a>
             <a href={`mailto:${links.contact.robynEmail}`}>{links.contact.robynEmail}</a>
           </div>
         </article>
@@ -172,15 +173,15 @@ const workstreams = [
 The HR career was shaped, amongst others, at IBM, Bristol-Myers Squibb, Novartis, and UBS, working globally and based out of the Netherlands, Austria, the UK, Germany, and Switzerland. In local, regional, and global positions. He was the co-founder of KennedyFitch, a recognised brand for executive search, people advisory and leadership & transformation. In parallel, he has been active in building and connecting HR communities, including as co-founder of the Beyond HR Forum.
 A consistent thread in his work is research and thought leadership and he has (co-)authored several studies on the evolving role of HR and the new world of work, which continues to inform his perspective and practice. At Brooksmiller, he focuses on executive search in the HR domain. </p>
           <div class="person-links" aria-label="Ruud Rikhof links">
-            <a href={links.organizations.brooksmiller} target="_blank" rel="noopener noreferrer">brooksmiller ↗</a>
-            <a href={links.people.ruudLinkedIn} target="_blank" rel="noopener noreferrer" aria-label="Ruud Rikhof on LinkedIn">LinkedIn ↗</a>
+            <a href={links.organizations.brooksmiller} target="_blank" rel="noopener noreferrer">brooksmiller <ArrowIcon /></a>
+            <a href={links.people.ruudLinkedIn} target="_blank" rel="noopener noreferrer" aria-label="Ruud Rikhof on LinkedIn">LinkedIn <ArrowIcon /></a>
             <a href={`mailto:${links.contact.ruudEmail}`}>{links.contact.ruudEmail}</a>
           </div>
           <div class="previous-publications">
             <p>Previous publications</p>
             <ul>
               {previousPublications.map((publication) => (
-                <li><a href={publication.url} target="_blank" rel="noopener noreferrer">{publication.title} <span aria-hidden="true">↗</span></a></li>
+                <li><a href={publication.url} target="_blank" rel="noopener noreferrer">{publication.title} <ArrowIcon /></a></li>
               ))}
             </ul>
           </div>
@@ -192,7 +193,7 @@ A consistent thread in his work is research and thought leadership and he has (c
       <h2 id="closing-title">The future of<br />work will not<br />shape <em>itself.</em></h2>
       <div>
         <p>Join us and help shape the future through ideas, research, workshops and action.</p>
-        <a class="button" href={links.contact.joinCollective}>Join the conversation&nbsp;↗</a>
+        <a class="button" href={links.contact.joinCollective}>Join the conversation&nbsp;<ArrowIcon /></a>
       </div>
     </section>
   </main>

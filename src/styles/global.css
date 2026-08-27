@@ -63,6 +63,8 @@ strong { font-weight: 600; }
 
 .site-header .button { border-color: var(--purple); background: var(--purple); color: var(--cream); }
 
+.arrow-icon { display: inline-block; flex: 0 0 auto; width: 1em; height: 1em; overflow: visible; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: square; stroke-linejoin: miter; vertical-align: -.12em; }
+
 .button { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: .75rem 1.1rem; border: 1px solid transparent; background: var(--purple); color: var(--cream); font-size: .8rem; font-weight: 600; letter-spacing: .075em; line-height: 1.2; text-decoration: none; text-transform: uppercase; transition: background-color .25s ease, border-color .25s ease, box-shadow .25s ease, color .25s ease, transform .25s ease; }
 .button:hover { border-color: var(--orange); background: var(--orange); color: var(--cream); transform: none; box-shadow: 3px 3px 0 var(--plum); }
 .button--small { min-height: 2.75rem; padding: .75rem 1.1rem; }
@@ -70,7 +72,11 @@ strong { font-weight: 600; }
 .button--light:hover { border-color: var(--orange); background: var(--orange); color: var(--cream); }
 
 .hero { position: relative; height: clamp(15rem, 26vw, 24rem); overflow: hidden; background: var(--plum); color: var(--cream); }
-.hero-art { position: absolute; inset: 0; background: url('/hero-art-clean.webp') left center / 100rem 100% repeat-x; }
+.hero-art { position: absolute; inset: 0; background: var(--plum) url('/hero-art-clean.webp') left center / 100rem 100% repeat-x; }
+
+@media (min-resolution: 2dppx) {
+  .hero-art { background-image: url('/hero-art-clean-hd.webp'); }
+}
 .hero-lockup { position: absolute; z-index: 1; inset: 0; overflow: hidden; color: var(--cream); }
 .hero-horiz { position: absolute; top: clamp(1rem, 2vw, 2rem); right: max(-2rem, -2vw); width: clamp(18rem, 55vw, 50rem); height: auto; }
 .hero-bottom { position: absolute; bottom: clamp(.75rem, 1.5vw, 1.5rem); left: max(-2rem, -2vw); display: flex; align-items: center; gap: clamp(.6rem, 1.5vw, 1.5rem); }
@@ -149,7 +155,7 @@ strong { font-weight: 600; }
 .closing .button { margin-top: 2rem; }
 .closing .button:hover { box-shadow: 3px 3px 0 var(--lime); }
 footer { position: relative; background: var(--plum); color: var(--cream); }
-footer > .art-band { height: clamp(7rem, 10vw, 9rem); background-size: 70rem auto; }
+footer > .art-band { height: clamp(7rem, 10vw, 9rem); background-image: url('/hero-art-clean.webp'); background-size: 70rem auto; }
 .footer-inner { position: absolute; left: 50%; bottom: clamp(1.5rem, 3vw, 2.5rem); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.5rem; width: max-content; max-width: calc(100% - 2rem); padding: .75rem 1.25rem; background: color-mix(in srgb, var(--purple) 50%, transparent); transform: translateX(-50%); backdrop-filter: blur(4px); }
 .footer-inner p { margin: 0; font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; }
 .footer-inner a { color: inherit; text-decoration-color: currentColor; text-underline-offset: .18em; transition: color .3s ease, text-decoration-color .3s ease; }
@@ -184,7 +190,7 @@ footer > .art-band { height: clamp(7rem, 10vw, 9rem); background-size: 70rem aut
   .answers-break { display: none; }
   .manifesto h2 br, .publication h2 br { display: none; }
   .publication { gap: 4rem; }
-  .publication figure { width: min(85%, 24rem); aspect-ratio: 707 / 1000; }
+  .publication figure { width: min(85%, 24rem); aspect-ratio: 707 / 1000; transform-origin: center; }
   .publication > div { max-width: 42rem; }
   .involvement { grid-template-columns: 1fr; }
   .involvement-copy { padding-top: 0; padding-left: 0; }
