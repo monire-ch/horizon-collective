@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { links } from '../content/links';
 
 interface Props {
   title: string;
@@ -26,10 +27,10 @@ const schema = {
     caption: 'Horizon Collective',
   },
   image: socialImage.href,
-  email: 'ruud.rikhof@brooksmillerpartners.com',
+  email: links.contact.ruudEmail,
   contactPoint: {
     '@type': 'ContactPoint',
-    email: 'ruud.rikhof@brooksmillerpartners.com',
+    email: links.contact.ruudEmail,
     contactType: 'general inquiries',
     availableLanguage: ['English'],
   },
@@ -37,17 +38,17 @@ const schema = {
     {
       '@type': 'Person',
       name: 'Robyn Agoston',
-      url: 'https://www.workevolved.io/',
+      url: links.organizations.workEvolved,
       sameAs: [
-        'https://www.linkedin.com/in/robyn-agoston/',
-        'https://workevolved.substack.com/',
+        links.people.robynLinkedIn,
+        links.people.robynSubstack,
       ],
     },
     {
       '@type': 'Person',
       name: 'Ruud Rikhof',
-      url: 'https://brooksmillerpartners.com/',
-      sameAs: ['https://www.linkedin.com/in/ruudrikhof/'],
+      url: links.organizations.brooksmiller,
+      sameAs: [links.people.ruudLinkedIn],
     },
   ],
 };
