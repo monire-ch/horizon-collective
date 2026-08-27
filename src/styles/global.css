@@ -100,7 +100,7 @@ strong { font-weight: 600; }
 .question-list li { font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 .question-list li::before { content: '■'; display: inline-block; margin-right: 1rem; color: var(--lime); font-size: .5rem; }
 
-.art-band { height: clamp(4rem, 8vw, 7rem); background: url('/art-band.webp') center bottom / 55rem auto repeat-x; }
+.art-band { height: clamp(4rem, 8vw, 7rem); background: url('/hero-art-clean.webp') center bottom / 55rem auto repeat-x; }
 .manifesto h2 { font-family: 'Newsreader', serif; font-size: clamp(2.75rem, 4.5vw, 4.5rem); font-style: italic; letter-spacing: -.04em; }
 
 .work h2 { max-width: 12ch; }
@@ -155,7 +155,7 @@ strong { font-weight: 600; }
 .closing .button { margin-top: 2rem; }
 .closing .button:hover { box-shadow: 3px 3px 0 var(--lime); }
 footer { position: relative; background: var(--plum); color: var(--cream); }
-footer > .art-band { height: clamp(7rem, 10vw, 9rem); background-image: url('/hero-art-clean.webp'); background-size: 70rem auto; }
+footer > .art-band { height: clamp(7rem, 10vw, 9rem); background-size: 70rem auto; }
 .footer-inner { position: absolute; left: 50%; bottom: clamp(1.5rem, 3vw, 2.5rem); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.5rem; width: max-content; max-width: calc(100% - 2rem); padding: .75rem 1.25rem; background: color-mix(in srgb, var(--purple) 50%, transparent); transform: translateX(-50%); backdrop-filter: blur(4px); }
 .footer-inner p { margin: 0; font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; }
 .footer-inner a { color: inherit; text-decoration-color: currentColor; text-underline-offset: .18em; transition: color .3s ease, text-decoration-color .3s ease; }
