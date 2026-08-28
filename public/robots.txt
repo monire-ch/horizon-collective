@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://horizoncollective.org/sitemap.xml
+Sitemap: https://thehorizoncollective.co/sitemap.xml

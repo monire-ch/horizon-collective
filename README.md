@@ -15,7 +15,7 @@ npm run dev
 npm run build
 ```
 
-The static site is generated in `dist/`. Set `SITE_URL` to the final production URL before building if it differs from `https://horizoncollective.org`.
+The static site is generated in `dist/`. Set `SITE_URL` to the final production URL before building if it differs from `https://thehorizoncollective.co`.
 
 ## Content maintenance
 
