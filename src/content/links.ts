@@ -10,7 +10,7 @@ export const links = {
     ruudEmail: 'ruud.rikhof@brooksmillerpartners.com',
   },
   organizations: {
-    workEvolved: 'https://www.workevolved.io/',
+    workEvolved: 'https://workevolved.substack.com/',
     brooksmiller: 'https://brooksmillerpartners.com/',
   },
   people: {
