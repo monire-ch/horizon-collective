@@ -3,19 +3,20 @@ export const links = {
     movement: '#movement',
     publications: '#publications',
     team: '#initiators',
+    workstreams: '#workstreams',
   },
   contact: {
     joinCollective: 'mailto:ruud.rikhof@brooksmillerpartners.com?subject=Join%20Horizon%20Collective',
-    robynEmail: 'robyn@workevolved.io',
     ruudEmail: 'ruud.rikhof@brooksmillerpartners.com',
   },
   organizations: {
-    workEvolved: 'https://workevolved.substack.com/',
     brooksmiller: 'https://brooksmillerpartners.com/',
+    springbreezeVentures: 'https://springbreezeventures.com/',
+    livingOrganization: 'https://ai-native.springbreezeventures.com/',
   },
   people: {
-    robynLinkedIn: 'https://www.linkedin.com/in/robyn-agoston/',
-    robynSubstack: 'https://workevolved.substack.com/',
+    breezeLinkedIn: 'https://www.linkedin.com/in/chunfengdong/',
+    jurajLinkedIn: 'https://www.linkedin.com/in/jurajondrejkovic/',
     ruudLinkedIn: 'https://www.linkedin.com/in/ruudrikhof/',
   },
   credits: {
