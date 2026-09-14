@@ -55,7 +55,6 @@ strong { font-weight: 600; }
 .skip-link:focus { transform: none; }
 
 .site-header { position: fixed; z-index: 20; isolation: isolate; overflow: hidden; inset: 0 0 auto; min-height: 5rem; padding: 1rem var(--content-gutter); display: flex; align-items: center; justify-content: flex-end; gap: 2rem; background-color: color-mix(in srgb, var(--cream) 84%, transparent); box-shadow: 0 .45rem 1.5rem color-mix(in srgb, var(--plum) 8%, transparent); color: var(--plum); backdrop-filter: blur(12px) saturate(.8); -webkit-backdrop-filter: blur(12px) saturate(.8); }
-.site-header::after { content: ''; position: absolute; inset: auto var(--content-gutter) 0; height: 4px; background: url('/straight-line.webp') center / 100% 100% no-repeat; pointer-events: none; }
 .site-header::before { content: ''; position: absolute; inset: 0; z-index: -1; background: url('/header-art.webp') center / cover; opacity: .13; mix-blend-mode: multiply; pointer-events: none; }
 .site-header nav { display: flex; align-items: center; gap: clamp(1.25rem, 3vw, 3rem); font-size: .875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 .site-header nav > a:not(.button) { background-image: linear-gradient(var(--orange), var(--orange)); background-position: left bottom; background-repeat: no-repeat; background-size: 0 3px; text-decoration: none; transition: color .25s ease, background-size .35s cubic-bezier(.22, 1, .36, 1); }
