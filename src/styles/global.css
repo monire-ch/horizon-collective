@@ -112,7 +112,7 @@ strong { font-weight: 600; }
 .stream-list li { display: grid; grid-template-columns: 2rem 1fr; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid var(--line); font-size: .82rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
 .stream-list span { color: var(--pink); }
 
-.workstreams { padding-bottom: clamp(3.5rem, 7vw, 6rem); background: var(--plum); color: var(--cream); }
+.workstreams { background: var(--plum); color: var(--cream); }
 .workstreams .eyebrow { color: var(--lime); }
 .workstreams h2 em { display: inline-block; color: var(--orange); transform: scaleX(1.12); transform-origin: left center; }
 .workstreams-intro { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--column-gap); align-items: end; margin-bottom: clamp(3rem, 6vw, 6rem); }
