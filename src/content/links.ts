@@ -15,6 +15,8 @@ export const links = {
     livingOrganization: 'https://ai-native.springbreezeventures.com/',
   },
   people: {
+    breezeLinkedIn: 'https://www.linkedin.com/in/chunfengdong/',
+    jurajLinkedIn: 'https://www.linkedin.com/in/jurajondrejkovic/',
     ruudLinkedIn: 'https://www.linkedin.com/in/ruudrikhof/',
   },
   credits: {
