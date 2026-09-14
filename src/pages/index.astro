@@ -25,6 +25,7 @@ const workstreams = [
       </a>
       <a href={links.sections.publications}>Publications</a>
       <a href={links.sections.team}>Team</a>
+      <a href={links.sections.workstreams}>Workstreams</a>
       <a class="button button--small" href={links.contact.joinCollective}>
         <span class="nav-label nav-label--full">Join the collective <ArrowIcon /></span>
         <span class="nav-label nav-label--short">Join <ArrowIcon /></span>
@@ -100,6 +101,32 @@ const workstreams = [
       </div>
     </section>
 
+    <section class="section workstreams" id="workstreams" aria-labelledby="workstreams-title" data-nav-theme="light">
+      <div class="workstreams-intro">
+        <div>
+          <p class="eyebrow">The workstreams</p>
+          <h2 id="workstreams-title">Ideas into<br /><em>action.</em></h2>
+        </div>
+        <p class="workstreams-deck">Focused explorations into the choices that will shape work and organisations over the next seven to ten years.</p>
+      </div>
+      <div class="workstream-cards">
+        <article class="workstream-card">
+          <h3>Organisation Design & AI-Native Operating Models</h3>
+          <p>You cannot drop AI into an Industrial-era operating model and expect the organisation to change. Our Zürich session brought the challenges into focus: AI ownership sits with whoever holds the tokens. Agents are mushrooming and nobody is pruning. Abundant intelligence has not become collective intelligence; coordination is becoming the scarcest resource in the enterprise.</p>
+          <p>What could organisations become over the next seven to ten years, as AI becomes woven into how work happens? And what must we begin changing today to shape that future consciously?</p>
+          <p>This workstream explores how organisations can evolve into living systems where humans and AI both flourish. Building on the Collective’s New Workforce Ecosystem, we will draw on the five pillars of the AI-Enabled Living System: distributed authority, fluid structure, evolutionary purpose, human wholeness and human–agent governance. Where might authority and accountability sit? How will work flow across organisational boundaries? How should humans and agents make decisions together? What will sustain judgement, creativity, trust and belonging?</p>
+          <p>Through shared inquiry, participants’ experience and practical experiments, we will work backwards from the futures we want to create, identifying design principles, transition choices and experiments we can begin today. Our findings will connect with the futures and leadership workstreams and contribute to the Collective’s playbook.</p>
+        </article>
+        <article class="workstream-card">
+          <h3>Four Futures of Work: different paths to Horizon 3</h3>
+          <p class="workstream-question">“Why might AI transform work at different speeds and in different ways across industries, and how can leaders shape the outcomes?”</p>
+          <p>Alongside the Collective’s white paper, we will use the Four Futures of Work framework I developed as a starting point for our shared exploration. Through four contrasting scenarios, we will consider how AI capabilities, adoption and leadership choices could shape work over the next seven to ten years. We will examine what accelerates or limits change across industries, and how deeply AI changes tasks, roles and business models.</p>
+          <p>We will also explore what organisations do with the capacity it creates: improve services, develop new sources of growth, invest in people, reduce costs, or combine these choices. Practitioners’ experiences will be central to this work. Alongside research, we will bring together company examples, compare different contexts and test our assumptions. The aim is to develop shared insights and practical questions that help leaders recognise emerging changes and consider what they should begin preparing for today.</p>
+          <p>This exploration will connect closely with the leadership and organisation design workstreams.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="section publication" id="publications" aria-labelledby="publication-title" data-nav-theme="dark">
       <figure>
         <a class="publication-cover-link" href={featuredPublication.url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${featuredPublication.title} in a new tab`}>
@@ -151,24 +178,13 @@ const workstreams = [
           <p class="eyebrow">The initiators</p>
           <h2 id="initiators-title">Two perspectives.<br />One shared inquiry.</h2>
         </div>
-        <p>The Horizon Collective is a joint initiative from Robyn Agoston at <a href={links.organizations.workEvolved} target="_blank" rel="noopener noreferrer"><strong>WorkEvolved</strong></a> and Ruud Rikhof at <a href={links.organizations.brooksmiller} target="_blank" rel="noopener noreferrer"><strong>brooksmiller</strong></a>. They both have a deep interest in how the future of work and organisations are evolving and have been researching and publishing about it.</p>
+        <p>The Horizon Collective is a joint initiative from Ruud Rikhof at <a href={links.organizations.brooksmiller} target="_blank" rel="noopener noreferrer"><strong>brooksmiller</strong></a>, together with a group of workstream leads exploring how work and organisations are evolving.</p>
       </div>
       <div class="people-grid">
         <article>
-          <img src="/robyn.jpeg" width="800" height="800" alt="Portrait of Robyn Agoston" loading="lazy" decoding="async" />
-          <h3>Robyn Agoston</h3>
-          <p class="role">AI & Future of Work Strategist · Advisor · Speaker · Coach</p>
-          <p><a href={links.people.robynLinkedIn} target="_blank" rel="noopener noreferrer">Robyn Agoston</a> is an AI & Future of Work Strategist, Advisor, Speaker and Coach, working at the intersection of people and technology. She helps individuals and organisations design work for the AI era so they can make the most of both humans and AI. Over the past 20+ years, she has led digital and AI transformations across global companies like KPMG, GSK, Novartis, Beamery, Tesco, O2, Shell, BP and AstraZeneca and now with PMI. As a consultant, entrepreneur and internal adviser, she is a generalist problem-solver who thrives at blending strategic vision with practical implementation. She has a uniquely global perspective from living in seven countries, and working across Europe, Africa, Asia and North America. Change might look different in every culture, but the human elements stay surprisingly consistent</p>
-          <div class="person-links" aria-label="Robyn Agoston links">
-            <a href={links.organizations.workEvolved} target="_blank" rel="noopener noreferrer">WorkEvolved <ArrowIcon /></a>
-            <a href={links.people.robynSubstack} target="_blank" rel="noopener noreferrer">Substack <ArrowIcon /></a>
-            <a href={`mailto:${links.contact.robynEmail}`}>{links.contact.robynEmail}</a>
-          </div>
-        </article>
-        <article>
           <img src="/ruud.jpg" width="721" height="692" alt="Portrait of Ruud Rikhof" loading="lazy" decoding="async" />
           <h3>Ruud Rikhof</h3>
-          <p class="role">Transforming HR leadership · Research · Executive search</p>
+          <p class="role">Founder · Transforming HR leadership · Research · Executive search</p>
           <p>The career of <a href={links.people.ruudLinkedIn} target="_blank" rel="noopener noreferrer">Ruud Rikhof</a> is a blend of international HR leadership experience, research-based insight, and executive search in the Human Resources domain.
 The HR career was shaped, amongst others, at IBM, Bristol-Myers Squibb, Novartis, and UBS, working globally and based out of the Netherlands, Austria, the UK, Germany, and Switzerland. In local, regional, and global positions. He was the co-founder of KennedyFitch, a recognised brand for executive search, people advisory and leadership & transformation. In parallel, he has been active in building and connecting HR communities, including as co-founder of the Beyond HR Forum.
 A consistent thread in his work is research and thought leadership and he has (co-)authored several studies on the evolving role of HR and the new world of work, which continues to inform his perspective and practice. At Brooksmiller, he focuses on executive search in the HR domain. </p>
@@ -186,6 +202,22 @@ A consistent thread in his work is research and thought leadership and he has (c
             </ul>
           </div>
         </article>
+        <article>
+          <img src="/breeze-dong.jpg" width="800" height="800" alt="Portrait of Chunfeng Breeze Dong" loading="lazy" decoding="async" />
+          <h3>Breeze Dong</h3>
+          <p class="role">Workstream Lead · Organisation Design & AI-Native Operating Models</p>
+          <p><strong>Breeze Dong</strong> is an organisation designer, executive coach and author exploring how organisations and people can flourish in the AI era. She currently works in Organisational Development at Roche, focusing on operating model effectiveness. Her experience spans more than 20 years across Roche, ABB, Siemens and Roland Berger. Founder of <a href={links.organizations.springbreezeVentures} target="_blank" rel="noopener noreferrer">Springbreeze Ventures</a>, Breeze combines an engineering background and an MPhil from Cambridge with psychology, ICF PCC executive coaching and mindfulness practice. She is co-author of <a href={links.organizations.livingOrganization} target="_blank" rel="noopener noreferrer">The Living Organization</a> and architect of its AI-Enabled Living System framework. Her work centres on a consequential choice: we are deciding, in a narrow window, what work will feel like for a generation. She helps leaders make that choice consciously, evolving organisations from machines that manage people into living systems where humans and AI both flourish.</p>
+          <div class="person-links" aria-label="Chunfeng Breeze Dong links">
+            <a href={links.organizations.springbreezeVentures} target="_blank" rel="noopener noreferrer">Springbreeze Ventures <ArrowIcon /></a>
+            <a href={links.organizations.livingOrganization} target="_blank" rel="noopener noreferrer">The Living Organization <ArrowIcon /></a>
+          </div>
+        </article>
+        <article>
+          <img src="/juraj-ondrejkovic.png" width="800" height="800" alt="Portrait of Juraj Ondrejkovic" loading="lazy" decoding="async" />
+          <h3>Juraj Ondrejkovic</h3>
+          <p class="role">Workstream Lead · Four Futures of Work: different paths to Horizon 3</p>
+          <p><strong>Juraj Ondrejkovic</strong> brings more than 20 years of experience in HR, talent and organisational change across the World Economic Forum, Syngenta, Thermo Fisher Scientific and The Adecco Group. His work has included developing leaders, building talent systems, leading HR for global businesses and reshaping operating models. At the World Economic Forum, he helped build the Global Leadership Fellows Programme, connecting leadership development with the challenges of working across sectors and cultures. The programme later became the subject of a Harvard Business School case study. He currently advises on organisation design and responsible AI adoption, including AI in recruitment. He enjoys exploring new possibilities with others, testing ideas in practice and turning shared insights into better ways of working.</p>
+        </article>
       </div>
     </section>
 
@@ -201,7 +233,7 @@ A consistent thread in his work is research and thought leadership and he has (c
   <footer data-nav-theme="dark">
     <div class="art-band" aria-hidden="true" data-nav-theme="dark"></div>
     <div class="footer-inner" data-nav-theme="dark">
-      <p>Powered by <a href={links.organizations.brooksmiller} target="_blank" rel="noopener noreferrer">brooksmiller</a> + <a href={links.organizations.workEvolved} target="_blank" rel="noopener noreferrer">WorkEvolved</a></p>
+      <p>Powered by <a href={links.organizations.brooksmiller} target="_blank" rel="noopener noreferrer">brooksmiller</a></p>
       <p>© 2026 Horizon Collective</p>
       <p>Website by <a href={links.credits.monire} target="_blank" rel="noopener noreferrer">Moniré</a></p>
     </div>
