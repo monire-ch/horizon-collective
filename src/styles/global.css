@@ -152,6 +152,7 @@ strong { font-weight: 600; }
 .people-grid article { position: relative; min-width: 0; padding-top: 1.5rem; }
 .people-grid article::before { content: ''; position: absolute; inset: 0 0 auto; height: 4px; background: url('/straight-line.webp') center / 100% 100% no-repeat; }
 .people-grid img { width: 100%; height: clamp(20rem, 34vw, 30rem); object-fit: cover; object-position: center 28%; }
+.people-grid img.breeze-portrait { object-position: center 8%; }
 .people-grid h3 { margin: 1.2rem 0 .3rem; color: var(--pink); font-size: 2rem; font-weight: 400; }
 .people-grid .role { margin: 0 0 1rem; color: var(--purple); font-size: .875rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
 .people-grid article > p:not(.role) { font-size: 1rem; }
