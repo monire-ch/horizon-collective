@@ -121,7 +121,7 @@ strong { font-weight: 600; }
 .workstream-card { display: grid; grid-template-columns: minmax(0, 1fr); padding: clamp(2.25rem, 5vw, 5rem) 0; background: url('/straight-line.webp') top center / 100% 4px no-repeat; }
 .workstream-card:last-child { background-image: url('/straight-line.webp'); background-position: top center; background-size: 100% 4px; background-repeat: no-repeat; }
 .workstream-card h3 { max-width: none; margin-bottom: 2rem; color: var(--lime); font-size: clamp(1.8rem, 3vw, 3.25rem); font-weight: 400; line-height: .98; letter-spacing: -.05em; }
-.workstream-card p { max-width: 72rem; color: var(--cream); font-size: 1rem; }
+.workstream-card p { max-width: none; color: var(--cream); font-size: 1rem; }
 .workstream-card p:last-child { margin-bottom: 0; }
 .workstream-question { color: var(--orange); font-family: 'Newsreader', serif; font-size: clamp(1.25rem, 1.8vw, 1.6rem) !important; font-style: italic; line-height: 1.2; }
 
