@@ -51,3 +51,18 @@ export const previousPublications = [
     url: 'https://www.linkedin.com/pulse/10-unavoidable-trends-relevant-hr-ruud-rikhof/',
   },
 ] as const satisfies readonly PublicationLink[];
+
+export const jurajSelectedWriting = [
+  {
+    title: 'Why So Many Transformations Create the Complexity They Later Need to Cut',
+    url: 'https://www.linkedin.com/pulse/why-so-many-transformations-create-complexity-later-need-ondrejkovic-fawhe',
+  },
+  {
+    title: 'From Dashboards to Decision Architecture',
+    url: 'https://www.linkedin.com/pulse/from-dashboards-decision-architecture-why-reporting-ai-ondrejkovic-lacje',
+  },
+  {
+    title: 'The Great AI Irony',
+    url: 'https://www.linkedin.com/pulse/great-ai-irony-why-intern-senior-expert-worried-same-ondrejkovic-o17ge',
+  },
+] as const satisfies readonly PublicationLink[];

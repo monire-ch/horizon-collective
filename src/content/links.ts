@@ -16,6 +16,7 @@ export const links = {
   },
   people: {
     breezeLinkedIn: 'https://www.linkedin.com/in/chunfengdong/',
+    breezeSubstack: 'https://substack.com/@breezedong',
     jurajLinkedIn: 'https://www.linkedin.com/in/jurajondrejkovic/',
     ruudLinkedIn: 'https://www.linkedin.com/in/ruudrikhof/',
   },

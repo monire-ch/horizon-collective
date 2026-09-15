@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArrowIcon from '../components/ArrowIcon.astro';
 import { links } from '../content/links';
-import { featuredPublication, previousPublications, publicationDownloads } from '../content/publications';
+import { featuredPublication, jurajSelectedWriting, previousPublications, publicationDownloads } from '../content/publications';
 
 const questions = ['What survives?', 'What transforms?', 'What must be reinvented?'];
 const workstreams = [
@@ -120,8 +120,8 @@ const workstreams = [
         <article class="workstream-card">
           <h3>Four Futures of Work: different paths to Horizon 3</h3>
           <p class="workstream-question">“Why might AI transform work at different speeds and in different ways across industries, and how can leaders shape the outcomes?”</p>
-          <p>Alongside the Collective’s white paper, we will use the Four Futures of Work framework I developed as a starting point for our shared exploration. Through four contrasting scenarios, we will consider how AI capabilities, adoption and leadership choices could shape work over the next seven to ten years. We will examine what accelerates or limits change across industries, and how deeply AI changes tasks, roles and business models.</p>
-          <p>We will also explore what organisations do with the capacity it creates: improve services, develop new sources of growth, invest in people, reduce costs, or combine these choices. Practitioners’ experiences will be central to this work. Alongside research, we will bring together company examples, compare different contexts and test our assumptions. The aim is to develop shared insights and practical questions that help leaders recognise emerging changes and consider what they should begin preparing for today.</p>
+          <p>Alongside the Collective’s white paper, we will use the Four Futures of Work framework as a starting point for our shared exploration. Through four contrasting scenarios, we will consider how AI capabilities, adoption and leadership choices could shape work over the next seven to ten years. We will examine what accelerates or limits change across industries, and how deeply AI changes tasks, roles and business models.</p>
+          <p>We will also explore what organisations do with the capacity it creates: improve services, develop new sources of growth, invest in people, reduce costs, or combine these choices. A working paper supporting the framework sets out initial assumptions for us to test and refine together through research, practitioner conversations and company examples. The aim is to connect a long-term view of work with practical choices: where and how can organisations create tangible value, and what should leaders begin testing or changing today? We invite practitioners to bring company examples, challenge the scenarios and help turn emerging insights into approaches they can test in their own organisations.</p>
           <p>This exploration will connect closely with the leadership and organisation design workstreams.</p>
         </article>
       </div>
@@ -211,15 +211,25 @@ A consistent thread in his work is research and thought leadership and he has (c
             <a href={links.organizations.springbreezeVentures} target="_blank" rel="noopener noreferrer">Springbreeze Ventures <ArrowIcon /></a>
             <a href={links.organizations.livingOrganization} target="_blank" rel="noopener noreferrer">The Living Organization <ArrowIcon /></a>
             <a href={links.people.breezeLinkedIn} target="_blank" rel="noopener noreferrer">LinkedIn <ArrowIcon /></a>
+            <a href={links.people.breezeSubstack} target="_blank" rel="noopener noreferrer">Substack <ArrowIcon /></a>
           </div>
         </article>
         <article>
-          <img src="/juraj-ondrejkovic.png" width="800" height="800" alt="Portrait of Juraj Ondrejkovic" loading="lazy" decoding="async" />
+          <img src="/juraj-ondrejkovic.jpg" width="800" height="800" alt="Portrait of Juraj Ondrejkovic" loading="lazy" decoding="async" />
           <h3>Juraj Ondrejkovic</h3>
           <p class="role">Workstream Lead · Four Futures of Work: different paths to Horizon 3</p>
-          <p><strong>Juraj Ondrejkovic</strong> brings more than 20 years of experience in HR, talent and organisational change across the World Economic Forum, Syngenta, Thermo Fisher Scientific and The Adecco Group. His work has included developing leaders, building talent systems, leading HR for global businesses and reshaping operating models. At the World Economic Forum, he helped build the Global Leadership Fellows Programme, connecting leadership development with the challenges of working across sectors and cultures. The programme later became the subject of a Harvard Business School case study. He currently advises on organisation design and responsible AI adoption, including AI in recruitment. He enjoys exploring new possibilities with others, testing ideas in practice and turning shared insights into better ways of working.</p>
+          <p><strong>Juraj Ondrejkovic</strong> brings more than 20 years of experience in HR, talent and organisational change across the World Economic Forum, Syngenta, Thermo Fisher Scientific and The Adecco Group. His work spans leadership development, enterprise talent systems and operating model change. He helped build the World Economic Forum’s Global Leadership Fellows Programme, later featured in a Harvard Business School case study.</p>
+          <p>His current advisory work focuses on organisation design and responsible AI adoption, including AI in recruitment. His writing explores practical questions about organisational complexity, decision-making and developing people as AI changes work, drawing on practice, research and conversations across the HR community. He developed the Four Futures of Work framework as a starting point for shared exploration within the Horizon Collective.</p>
           <div class="person-links" aria-label="Juraj Ondrejkovic links">
             <a href={links.people.jurajLinkedIn} target="_blank" rel="noopener noreferrer">LinkedIn <ArrowIcon /></a>
+          </div>
+          <div class="previous-publications">
+            <p>Previous publications</p>
+            <ul>
+              {jurajSelectedWriting.map((publication) => (
+                <li><a href={publication.url} target="_blank" rel="noopener noreferrer"><span>{publication.title}</span><ArrowIcon /></a></li>
+              ))}
+            </ul>
           </div>
         </article>
       </div>
